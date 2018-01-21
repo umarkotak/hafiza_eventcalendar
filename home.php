@@ -19,7 +19,7 @@ $jadwal_next = $sql->fetchAll();
 
 <div class="row">
     <div class="col-md-12">
-        <h2>Home</h2>
+        <h2>Home - Umar</h2>
         <p>here is your event calendar</p>
         <hr>
 
