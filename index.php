@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,8 +27,9 @@
     <?php include "header.php"; ?>
     <?php include "navbar.php"; ?>
     <div class="container-fluid" style="margin: -15px 5px 5px; border: 1px solid #88d8c0; border-radius: 5px;">
-    <?php include "konten.php"; ?>
+      <?php include "konten.php"; ?>
     </div>
+
     <?php include "footer.php"; ?>
   </div>
 

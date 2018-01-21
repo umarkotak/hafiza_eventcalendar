@@ -1,3 +1,12 @@
+<?php include "koneksi.php"; ?>
+<?php
+    $sql = $conn->prepare('SELECT * FROM tbl_ruangan');
+    $data = array();
+    $sql->execute($data);
+
+    $pilihan = $sql->fetchAll();
+?>
+
 <div class="row">
     <div class="col-md-12">
         <h2>Tambah Kegiatan</h2>
@@ -9,6 +18,25 @@
                 <div class="form-group">
                     <label>Tanggal Acara : </label>
                     <input type="date" name="date" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Jam Mulai : </label>
+                    <input type="time" name="jam_mulai" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Jam Selesai : </label>
+                    <input type="time" name="jam_selesai" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Nama Ruangan : </label>
+                    <select name="id_ruangan" class="form-control">
+                        <?php foreach ($pilihan as $pilih): ?>
+                            <option value="<?php echo $pilih['id_ruangan'] ?>"><?php echo $pilih['nama']; ?></option>
+                        <?php endforeach ?>
+                    </select>
                 </div>
 
                 <div class="form-group">

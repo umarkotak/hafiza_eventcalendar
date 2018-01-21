@@ -1,10 +1,15 @@
-<?php 
+<?php
+try {
+  $host     = 'localhost';
+  $dbname   = 'latihan';
+  $user     = 'root';
+  $password = '';
 
-$host = "localhost";
-$user = "root";
-$password = "";
-$database = "latihan";
+  $conn = new PDO("mysql:host=$host;dbname=$dbname","$user","$password");
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (Exception $e) {
 
-$conn = mysqli_connect($host, $user, $password, $database);
-
+  $_SESSION['notice'] = "There is some trouble in your connection" . $e->getMessage();
+  die();
+}
 ?>

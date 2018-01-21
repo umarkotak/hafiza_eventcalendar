@@ -1,8 +1,7 @@
-<?php 
-
+<?php
 	session_start();
 	session_unset();
-	session_destroy();
-	header("location:?page=home");
+
+	header("location: index.php?page=home");
 
 ?>
