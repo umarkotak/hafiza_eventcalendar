@@ -40,10 +40,19 @@
 
     <li><a href='?page=home'>HOME</a></li>
     <?php if (isset($_SESSION['username'])): ?>
-      <li><a href="?page=kegiatan">TAMBAH KEGIATAN</a></li>
-      <li><a href="?page=admin">TAMBAH ADMIN</a></li>
-      <li><a href="?page=ruangan">RUANGAN</a></li>
-      <li><a href='?page=master'>MASTER</a></li>
+
+      <?php if ($_SESSION['status'] == 'admin'): ?>
+        <li><a href="?page=kegiatan">TAMBAH KEGIATAN</a></li>
+        <li><a href="?page=admin">TAMBAH ADMIN</a></li>
+        <li><a href="?page=ruangan">RUANGAN</a></li>
+        <li><a href='?page=master'>MASTER</a></li>
+        
+      <?php elseif ($_SESSION['status'] == 'op'): ?>
+        <li><a href="?page=kegiatan">TAMBAH KEGIATAN</a></li>
+
+      <?php endif ?>
+
+      <li><a href="#"><?php echo strtoupper("Hello, ".$_SESSION['username']);  ?></a></li>
       <li><a href='?page=logout'>LOGOUT</a></li>
     <?php else: ?>
       <li><a href="?page=login">LOGIN</a></li>

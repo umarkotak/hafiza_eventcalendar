@@ -5,7 +5,7 @@
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 	$email = $_POST['email'];
-	$status = 'admin';
+	$status = $_POST['status'];
 
 	$sql = $conn->prepare("INSERT INTO tbl_user VALUES ('', :username, :password, :email, :status)");
 	$data = array(':username' => $username,
@@ -15,6 +15,7 @@
 
 	$sql->execute($data);
 
+	$_SESSION['status'] = $status;
 	header('location: index.php?page=home');
 
 ?>

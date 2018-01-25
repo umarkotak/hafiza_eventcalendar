@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <div class="row" style="background-color: #88d8c0;">
+  <div class="row" style="background-color: white;">
     <div class="col-md-2">
       <img src="image/logo.png" style="width: 100%; margin: 5px;">
     </div>

@@ -11,6 +11,7 @@ $data = array(':username' => $username,
 $sql->execute($data);
 
 $count = $sql->rowcount();
+$row = $sql->fetch(PDO::FETCH_OBJ);
 
 if ($count==0) {
   $_SESSION['notice'] = "Wrong username or password";
@@ -19,6 +20,7 @@ if ($count==0) {
 } else {
   $_SESSION['notice'] = "Login success";
   $_SESSION['username'] = $username;
+  $_SESSION['status'] = $row->status;
 
   header("location: index.php?page=home");
 }
